@@ -1,0 +1,11 @@
+.info-panel {
+    background-color: #fafafa;
+    &__inner {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+    }
+    &__logo {
+        margin-right: 45px;
+    }
+}

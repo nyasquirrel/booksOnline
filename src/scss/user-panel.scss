@@ -1,0 +1,22 @@
+.user-panel {
+    background-color: #424242;
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__el {
+        margin: 0 10px;
+    }
+    &__link {
+        display: block;
+        padding: 8px 5px;
+        color: #ffffff;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

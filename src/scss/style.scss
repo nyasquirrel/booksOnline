@@ -1,0 +1,23 @@
+@import "fonts.scss";
+@import "variables.scss";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: $main-font;
+    font-size: 15px;
+    line-height: 16px;
+}
+
+.container {
+    width: 1270px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+@import "user-panel.scss";
+@import "info-panel.scss";
+@import "search.scss";
+@import "cart.scss";
+@import "nav.scss";
