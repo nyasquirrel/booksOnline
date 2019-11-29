@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
   "devDependencies": {
     "autoprefixer": "6.7.x",
     "browser-sync": "^2.26.7",
