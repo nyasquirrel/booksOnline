@@ -1,4 +1,6 @@
 @import "fonts.scss";
+@import "fonts.scss";
+@import "variables.scss";
 @import "variables.scss";
 
 * {
@@ -6,8 +8,6 @@
     padding: 0;
     margin: 0;
     font-family: $main-font;
-    font-size: 15px;
-    line-height: 16px;
 }
 
 .container {
@@ -16,8 +16,13 @@
     margin: 0 auto;
 }
 
+main {
+    padding: 15px 0 25px;
+}
+
 @import "user-panel.scss";
 @import "info-panel.scss";
 @import "search.scss";
 @import "cart.scss";
 @import "nav.scss";
+@import "sales.scss";

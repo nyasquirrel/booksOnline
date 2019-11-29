@@ -4,7 +4,30 @@
     &__menu {
         list-style: none;
         display: flex;
-        padding: 0 10px;
         justify-content: space-between;
+    }
+    &__el {
+        flex: 1 auto;
+    }
+    &__link {
+        display: block;
+        text-decoration: none;
+        color: #666666;
+        padding: 13px 0 10px;
+        font-size: 19px;
+        text-align: center;
+        &:hover {
+            background-color: rgba(121, 178, 96, 0.2);
+            transition-duration: 0.15s;
+        }
+        &:active {
+            background-color: rgba(121, 178, 96, 0.5);
+            transition-duration: 0.1s;
+
+        }
+        &--active {
+            background: $green-gradient;
+            cursor: default;
+        }
     }
 }

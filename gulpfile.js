@@ -21,9 +21,10 @@ gulp.task("clean", function () {
 gulp.task("copy", function () {
 	return gulp.src([
 		"src/fonts/**/*.{woff,woff2,ttf}",
-		"src/img/**",
-		"src/js/**",
-		"src/*.html"
+		"src/*.html",
+		"src/assets/*",
+		"src/js/*",
+		"src/img/*"
 	], {
 			base: "src"
 		})

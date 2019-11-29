@@ -1,0 +1,91 @@
+.sales {
+    display: flex;
+    color: #fff;
+    &__slider {
+        overflow: hidden;
+        margin-right: 15px;
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            &:focus {
+                outline: none;
+            }
+        }
+        .owl-next {
+            right: 12px;
+        }
+        .owl-prev {
+            left: 12px;
+        }
+        &-text {
+            position: absolute;
+            top: 45%;
+            right: 80px;
+            width: 50%;
+            text-align: center;
+            &-title {
+                font-size: 50px;
+                font-weight: bold;
+            }
+            &-descr {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            &-author {
+                font-size: 28px;
+                font-weight: bold;
+            }
+        }
+    }
+    &__banner {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 7px 7px;
+        min-width: 300px;
+        align-items: center;
+        box-shadow: inset 0 0 200px 10px rgba(0,0,0,1);
+        &-title {
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        &-descr {
+            font-weight: lighter;
+            margin-bottom: 20px;
+        }
+        img {
+            height: 160px;
+            width: auto;
+            margin-bottom: 15px;
+        }
+        &-save {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        &-cost {
+            margin-bottom: 7px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        &-btn {
+            background: linear-gradient(#61c261, #51a551);
+            padding: 5px 20px;
+            border: 1px solid #52a452;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 22px;
+            text-shadow: 1px 1px rgba(0,0,0,1);
+            transition-duration: .2s;
+            &:hover {
+                box-shadow: 0 0 10px 1px #52a452;
+                transition-duration: .2s;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: inset 0 0 10px 2px #52a452;
+            }
+        }
+    }
+}
