@@ -1,0 +1,24 @@
+.production {
+    display: flex;
+    &__tabs {
+        display: flex;
+        list-style: none;
+        &-item {
+            
+        }
+        &-link {
+            display: block;
+            padding: 10px 20px;
+            border: 1px solid #d8dce0;
+            background: linear-gradient(#fbfbfb , #e2e2e2);
+            margin-top: -1px;
+            &--active {
+                background: #fff;
+                border-bottom: #fff;
+            }
+        }
+    }
+    &__listing {
+        border: 1px solid #d8dce0;
+    }
+}
