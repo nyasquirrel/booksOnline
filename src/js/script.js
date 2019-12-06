@@ -7,3 +7,6 @@ $(document).ready(function () {
         navText: ['<img src="./img/nav-prev.png" alt="Левая стрелка">','<img src="./img/nav-next.png" alt="Правая стрелка">']
     });
 });
+
+
+let productItems = document.querySelectorAll('.production__item')

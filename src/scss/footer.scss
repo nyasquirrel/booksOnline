@@ -1,0 +1,27 @@
+.footer {
+    background: #424342 url('../img/bg-footer.png') repeat;
+    &__wrapper {
+        display: flex;
+        padding: 30px 15px;
+        justify-content: space-between;
+    }
+    &__title {
+        color: rgba(221,221,221,1);
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    &__link {
+        display: block;
+        color: rgba(221,221,221,.7);;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(221,221,221,.1);
+        &:hover {
+            color: rgba(221,221,221,1);
+        }
+        &:active {
+            border-bottom: 1px solid rgba(221,221,221,.4);
+        }
+    }
+}
