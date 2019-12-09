@@ -25,7 +25,7 @@ tabs.forEach( tab => {
                 showSpecialProducts();
                 break;
             case '#best':
-                showBestProducts();
+                showAllProducts();
                 break;
             case '#new':
                 showNewProducts();
@@ -38,6 +38,7 @@ tabs.forEach( tab => {
         }
     })
 })
+
 function showSpecialProducts() { 
     let specialItems = productItemsArray.filter(el =>
         el.dataset.item == 'special'
@@ -48,7 +49,7 @@ function showSpecialProducts() {
     }
 }
 
-function showBestProducts() {
+function showAllProducts() {
     productsBody.innerHTML = '';
     for (product of productItemsArray) {
         productsBody.append(product);
