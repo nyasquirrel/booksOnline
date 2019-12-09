@@ -10,11 +10,11 @@
             background: linear-gradient(#fbfbfb , #e2e2e2);
             text-decoration: none;
             color: #6b6969;
+            transition-duration: 0.23s;
             &--active {
                 background: #fff;
                 border-bottom-color: #fff;
                 color: #464646;
-                font-weight: bold;
                 position: relative;
             }
             &:hover {
@@ -39,11 +39,10 @@
         display: flex;
         flex-wrap: wrap;
         padding: 40px 20px 0;
-        justify-content: space-between;
     }
     &__item {
         width: 15%;
-        margin: 0 2.5%;
+        margin: 0 3%;
         display: flex;
         flex-direction: column;
         margin-bottom: 30px;

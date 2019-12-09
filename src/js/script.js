@@ -12,30 +12,71 @@ $(document).ready(function () {
 let tabs = document.querySelectorAll('.production__tabs-link');
 let productItems = document.querySelectorAll('.production__item');
 let productsBody = document.querySelector('.production__listing');
+let productItemsArray = Array.from(productItems);
 
-for (tab of tabs) {
+tabs.forEach( tab => {
     tab.addEventListener('click', e => {
         e.preventDefault();
+        deleteActiveTab()
+        tab.classList.add('production__tabs-link--active');
         let sortName = tab.getAttribute('href');
         switch (sortName) {
             case '#special':
                 showSpecialProducts();
                 break;
+            case '#best':
+                showBestProducts();
+                break;
+            case '#new':
+                showNewProducts();
+                break;
+            case '#used':
+                showUsedProducts();
+                break;
             default:
                 showAllProducts();
         }
     })
-}
-
-function fromArray() {
-    let arrlist = Array.from(productItems);
-}
-function showSpecialProducts() {
-    let productItemsArray = Array.from(productItems);
+})
+function showSpecialProducts() { 
     let specialItems = productItemsArray.filter(el =>
         el.dataset.item == 'special'
-    );
+    )
     productsBody.innerHTML = '';
-    for (item of specialItems)
-        productsBody.innerHTML += item;
+    for (let item of specialItems) {
+        productsBody.append(item);
+    }
+}
+
+function showBestProducts() {
+    productsBody.innerHTML = '';
+    for (product of productItemsArray) {
+        productsBody.append(product);
+    }
+}
+
+function showNewProducts() {
+    let newItems = productItemsArray.filter(el =>
+        el.dataset.item == 'new'
+    )
+    productsBody.innerHTML = '';
+    for (let item of newItems) {
+        productsBody.append(item);
+    }
+}
+
+function showUsedProducts() {
+    let usedItems = productItemsArray.filter(el =>
+        el.dataset.item == 'used'
+    )
+    productsBody.innerHTML = '';
+    for (let item of usedItems) {
+        productsBody.append(item);
+    }
+}
+
+function deleteActiveTab() {
+    tabs.forEach( tab => {
+        tab.classList.remove('production__tabs-link--active');
+    });
 }
