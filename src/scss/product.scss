@@ -1,0 +1,21 @@
+.product {
+    display: flex;
+    border: 1px solid #d8dce0;
+    padding: 40px;
+    border-radius: 7px;
+    &__image {
+        margin-right: 50px;
+    }
+    &__name {
+        font-size: 40px;
+        color: #595959;
+        margin: 10px 0 30px;
+        padding: 0 10px;
+    }
+    &__text {
+        font-size: 16px;
+        line-height: 28px;
+        color: #7e7e7e;
+        padding: 0 10px;
+    }
+}
