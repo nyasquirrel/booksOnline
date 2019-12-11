@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Product</title>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
     <header class="header">
         <section class="user-panel">
@@ -55,7 +57,7 @@
                     </div>
                     <div class="cart">
                         <div class="cart__info">
-    
+
                             <div class="cart__wrapper">
                                 <svg width="27px" height="29px">
                                     <path fill-rule="evenodd" fill="rgb(121, 178, 96)"
@@ -161,21 +163,144 @@
                 </ul>
             </div>
             <div class="product">
-                <img src="./img/prod-img1.png" alt="Изображение товара 1" class="product__image">
-                <div class="procuct__wrapper">
+                <section class="product__image">
+                    <img src="./img/prod-img1.png" alt="Изображение товара 1">
+                </section>
+                <section class="procuct__wrapper">
                     <div class="product__name">Star Wars Episode I</div>
-                    <div class="product__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium laboriosam, quam esse iste quibusdam doloribus asperiores. Porro, rerum perspiciatis nostrum aliquid maiores, minima, illo atque rem fugit mollitia provident voluptatum magni deleniti nihil similique nulla aperiam sapiente praesentium obcaecati! Beatae modi magni eum rerum culpa accusamus harum consequatur placeat quaerat, ratione quo esse, doloremque eaque sapiente odio molestias aliquid, vero aliquam reprehenderit est labore ea aperiam. Ab necessitatibus incidunt repellendus.</div>
-                    <div class="product__price-wrapper">
-                        <div class="product__price">
+                    <div class="product__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
+                        laboriosam, quam esse iste quibusdam doloribus asperiores. Porro, rerum perspiciatis nostrum
+                        aliquid maiores, minima, illo atque rem fugit mollitia provident voluptatum magni deleniti nihil
+                        similique nulla aperiam sapiente praesentium obcaecati! Beatae modi magni eum rerum culpa
+                        accusamus harum consequatur placeat quaerat, ratione quo esse, doloremque eaque sapiente odio
+                        molestias aliquid, vero aliquam reprehenderit est labore ea aperiam. Ab necessitatibus incidunt
+                        repellendus.</div>
+                    <div class="product__price">
+                        <div class="product__price-inner">
                             <div class="product__price-now">Our price : <span>$150</span></div>
                             <div class="product__price-was">Was $ 200 Save 20%</div>
                         </div>
-                        
+                        <button class="product__btn">
+                            Add to cart
+                        </button>
+                        <div class="product__pay">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="14px" height="13px">
+                                    <image opacity="0.502" x="0px" y="0px" width="14px" height="13px"
+                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfjDAsNLDawpsToAAAAt0lEQVQY04XQMUoDYRCG4Wd/V5chafUgYmtlZyseIBdQsdLCC6QSL5FOsLDxAF4gRcTKKiBaSEQ2otlY/CsRMfhWH9/LzMAU8yMVXDt1r7LrwjowTDpCDGIv9uM2LuM5tuMlhFAlM2oH+s5s2nEj6efJeYKRD71cKBy6anOCV10d32yYtqmEmUZtra2maKQsayeebCnatROPzh1n2Xjw6c5Pxoubq35TLuQy/pErS11Resu//YP3L+ybJ0s15kUqAAAAAElFTkSuQmCC" />
+                                </svg>
+                                Safe, Secure Shopping</span>
+                            <ul class="product__pay-list">
+                                <li class="product__pay-el"><img src="./img/paypal-curved-64px.png" alt=""></li>
+                                <li class="product__pay-el"><img src="./img/mastercard-curved-64px.png" alt=""></li>
+                                <li class="product__pay-el"><img src="./img/visa-curved-64px.png" alt=""></li>
+                                <li class="product__pay-el"><img src="./img/american-express-curved-64px.png" alt="">
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </section>
+            </div>
+            <div class="prod-info">
+                <ul class="prod-info__tab-list">
+                    <li class="prod-info__tab-el">
+                        <a href="#" class="prod-info__tab-link prod-info__tab-link--active">
+                            Product Information
+                        </a>
+                    </li>
+                    <li class="prod-info__tab-el">
+                        <a href="#" class="prod-info__tab-link">
+                            Other details
+                        </a>
+                    </li>
+                </ul>
+                <section class="prod-info__text-body prod-info__text-body--active">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Ea similique, ducimus libero harum debitis dolorem sapiente numquam
+                    earum voluptates explicabo iusto est aut pariatur recusandae adipisci molestiae tempore nulla
+                    mollitia consequuntur inventore, eos dolor accusamus, sunt voluptatem! Ratione nostrum commodi
+                    veniam eligendi voluptatum praesentium, a rerum sequi quaerat, delectus ducimus.</section>
+                <section class="prod-info__text-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Inventore quaerat sunt quas dignissimos! Mollitia possimus illo, explicabo voluptate tenetur neque
+                    dignissimos ipsam facere deserunt id nam modi ducimus voluptatum tempore, nostrum quaerat blanditiis
+                    sit. Corporis nisi necessitatibus quo vero, sed ullam harum totam molestias maiores eius atque.
+                    Nihil, porro est!</section>
             </div>
         </div>
     </main>
-    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <section class="footer__category">
+                    <div class="footer__title">Biography & True Stories</div>
+                    <div class="footer__links-wrapper">
+                        <a href="#" class="footer__link">General</a>
+                        <a href="#" class="footer__link">Diaries, Letters & Journals</a>
+                        <a href="#" class="footer__link">Memoirs</a>
+                        <a href="#" class="footer__link">True Stories</a>
+                        <a href="#" class="footer__link">Generic Exams</a>
+                        <a href="#" class="footer__link">GK Titles</a>
+                        <a href="#" class="footer__link">Medical Entrance</a>
+                        <a href="#" class="footer__link">Other Entrance Exams</a>
+                        <a href="#" class="footer__link">PG Entrance Examinations</a>
+                        <a href="#" class="footer__link">SELF-help Titles</a>
+                        <a href="#" class="footer__link">Sociology</a>
+                    </div>
+                </section>
+                <section class="footer__category">
+                    <div class="footer__title">Professional & Reference</div>
+                    <div class="footer__links-wrapper">
+                        <a href="#" class="footer__link">Academic and Reference</a>
+                        <a href="#" class="footer__link">Business Trade</a>
+                        <a href="#" class="footer__link">Engineering and Computer Science</a>
+                        <a href="#" class="footer__link">Humanities, Social Sciences and Languages</a>
+                        <a href="#" class="footer__link">Introduction to Computers</a>
+                        <a href="#" class="footer__link">Science and Math</a>
+                        <a href="#" class="footer__link">Trade Business</a>
+                        <a href="#" class="footer__link">English Language & Literature</a>
+                        <a href="#" class="footer__link">English Language Teaching</a>
+                        <a href="#" class="footer__link">Environment Awareness</a>
+                        <a href="#" class="footer__link">Environment Protection</a>
+                    </div>
+                </section>
+                <section class="footer__category">
+                    <div class="footer__title">Earth Sciences</div>
+                    <div class="footer__links-wrapper">
+                        <a href="#" class="footer__link">Earth Sciences</a>
+                        <a href="#" class="footer__link">Geography</a>
+                        <a href="#" class="footer__link">The Environment</a>
+                        <a href="#" class="footer__link">Regional & Area Planning</a>
+                        <a href="#" class="footer__link">Fantasy</a>
+                        <a href="#" class="footer__link">Gay</a>
+                        <a href="#" class="footer__link">Humorous</a>
+                        <a href="#" class="footer__link">Interactive</a>
+                        <a href="#" class="footer__link">Legal</a>
+                        <a href="#" class="footer__link">Lesbian</a>
+                        <a href="#" class="footer__link">Men's Adventure</a>
+                    </div>
+                </section>
+                <section class="footer__category">
+                    <div class="footer__title">Mathematics</div>
+                    <div class="footer__links-wrapper">
+                        <a href="#" class="footer__link">Algebra</a>
+                        <a href="#" class="footer__link">Differential Equations</a>
+                        <a href="#" class="footer__link">Discrete Mathematics</a>
+                        <a href="#" class="footer__link">Fourier Analyst</a>
+                        <a href="#" class="footer__link">Numerical Analyst</a>
+                        <a href="#" class="footer__link">Probability</a>
+                        <a href="#" class="footer__link">Statistical Methods/data Analysis</a>
+                        <a href="#" class="footer__link">Stochastic And Random Processes</a>
+                        <a href="#" class="footer__link">Topology</a>
+                        <a href="#" class="footer__link">Statistics</a>
+                        <a href="#" class="footer__link">Mathermatics</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="js/script.js"></script>
+    </footer>
+
 </body>
+
 </html>

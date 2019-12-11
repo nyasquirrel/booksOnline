@@ -14,7 +14,7 @@ let productItems = document.querySelectorAll('.production__item');
 let productsBody = document.querySelector('.production__listing');
 let productItemsArray = Array.from(productItems);
 
-tabs.forEach( tab => {
+tabs.forEach(tab => {
     tab.addEventListener('click', e => {
         e.preventDefault();
         deleteActiveTab()
@@ -39,7 +39,7 @@ tabs.forEach( tab => {
     })
 })
 
-function showSpecialProducts() { 
+function showSpecialProducts() {
     let specialItems = productItemsArray.filter(el =>
         el.dataset.item == 'special'
     )
@@ -77,7 +77,7 @@ function showUsedProducts() {
 }
 
 function deleteActiveTab() {
-    tabs.forEach( tab => {
+    tabs.forEach(tab => {
         tab.classList.remove('production__tabs-link--active');
     });
 }

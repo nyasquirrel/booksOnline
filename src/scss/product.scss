@@ -3,13 +3,23 @@
     border: 1px solid #d8dce0;
     padding: 40px;
     border-radius: 7px;
+    margin-bottom: 15px;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
     &__image {
         margin-right: 50px;
+        border: 1px solid #c8c8c8;
+        img {
+            height: 100%;
+            width: auto;
+        }
     }
     &__name {
         font-size: 40px;
         color: #595959;
-        margin: 10px 0 30px;
+        margin: 10px 0 20px;
         padding: 0 10px;
     }
     &__text {
@@ -17,5 +27,61 @@
         line-height: 28px;
         color: #7e7e7e;
         padding: 0 10px;
+        margin-bottom: 10px;
+    }
+    &__price {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid #d5d2d2;
+        padding: 20px 30px 15px;
+        margin-top: auto;
+        &-inner {
+            display: flex;
+            flex-direction: column;
+        }
+        &-now {
+            font-size: 36px;
+            color: #015699;
+            margin-bottom: 5px;
+            span {
+                font-weight: bold;
+                color: #e45858;
+            }
+        }
+        &-was {
+            color: #939292;
+            font-size: 17px;
+        }
+    }
+    &__btn {
+        font-size: 24px;
+        font-weight: bold;
+        align-self: center;
+        color: #fff;
+        padding: 10px 50px;
+        border-radius: 3px;
+        border: none;
+        background: $green-gradient;
+        margin-left: auto;
+    }
+    &__pay {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 25px;
+        border-top: 1px solid #d1d1d1;
+        padding-top: 10px;
+        &-list {
+            list-style: none;
+        }
+        &-el {
+            display: inline-block;
+            margin-right: 5px;
+        }
+        span {
+            font-size: 13px;
+            color: #939292;
+            margin-bottom: 8px;
+        }
     }
 }

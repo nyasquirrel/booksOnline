@@ -10,11 +10,23 @@
     }
     &__el {
         margin-right: 10px;
+        &:last-child a {
+            pointer-events: none;
+            cursor: default;
+        }
     }
     &__link {
         text-decoration: none;
         font-size: 16px;
         color: #a6a6a6;
+        &:hover {
+            color: rgba(121, 178, 96, 0.8);
+            transition-duration: 0.15s;
+        }
+        &:active {
+            color: rgba(121, 178, 96, 1);
+            transition-duration: 0.1s;
+        }
     }
     &__separate {
         color: #a6a6a6;
