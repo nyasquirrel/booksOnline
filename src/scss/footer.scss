@@ -1,5 +1,11 @@
 .footer {
-    background: #424342 url('../img/bg-footer.png') repeat;
+    &__top {
+        background: #424342 url('../img/bg-footer.png') repeat;
+    }
+    &__bottom {
+        background: #424342 url('../img/bg-footer-bot.png') repeat;
+        color: #d1d1d1;
+    }
     &__wrapper {
         display: flex;
         padding: 30px 15px;
@@ -23,5 +29,29 @@
         &:active {
             border-bottom: 1px solid rgba(221,221,221,.4);
         }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    &__accept {
+        padding: 30px 10px 15px;
+        border-bottom: 1px solid rgba(209,209,209,.2);
+        &-txt {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        &-pay {
+            text-align: center;
+            img {
+                display: inline-block;
+            }
+        }
+    }
+    &__copyright {
+        font-size: 16px;
+        text-align: center;
+        padding: 20px 10px 30px;
+        box-shadow: inset 0 -4px 0 0 rgba(255,255,255,.2);
     }
 }

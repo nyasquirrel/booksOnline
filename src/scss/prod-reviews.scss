@@ -1,0 +1,36 @@
+.prod-reviews {
+  padding: 20px 30px;
+  border: 1px solid #d5d2d2;
+  border-radius: 7px;
+  color: #7e7e7e;
+  &__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  &__review {
+    display: flex;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e3e3e3;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  &__text {
+    font-size: 13px;
+    line-height: 21px;
+    padding-right: 20px;
+  }
+  &__form-wrap {
+    padding: 0 10px;
+  }
+}
