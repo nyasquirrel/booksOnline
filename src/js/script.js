@@ -15,29 +15,31 @@ let productsBody = document.querySelector('.production__listing');
 let productItemsArray = Array.from(productItems);
 
 tabs.forEach(tab => {
-    tab.addEventListener('click', e => {
-        e.preventDefault();
-        deleteActiveTab()
-        tab.classList.add('production__tabs-link--active');
-        let sortName = tab.getAttribute('href');
-        switch (sortName) {
-            case '#special':
-                showSpecialProducts();
-                break;
-            case '#best':
-                showAllProducts();
-                break;
-            case '#new':
-                showNewProducts();
-                break;
-            case '#used':
-                showUsedProducts();
-                break;
-            default:
-                showAllProducts();
-        }
-    })
-})
+    tab.addEventListener('click', sortTabs);
+})  
+    
+function sortTabs(e) {
+    e.preventDefault();
+    deleteActiveTab()
+    this.classList.add('production__tabs-link--active');
+    let sortName = this.getAttribute('href');
+    switch (sortName) {
+        case '#special':
+            showSpecialProducts();
+            break;
+        case '#best':
+            showAllProducts();
+            break;
+        case '#new':
+            showNewProducts();
+            break;
+        case '#used':
+            showUsedProducts();
+            break;
+        default:
+            showAllProducts();
+    }
+}
 
 function showSpecialProducts() {
     let specialItems = productItemsArray.filter(el =>
@@ -80,4 +82,26 @@ function deleteActiveTab() {
     tabs.forEach(tab => {
         tab.classList.remove('production__tabs-link--active');
     });
+}
+
+
+let tabsProductInfo = Array.from(document.querySelectorAll('.prod-info__tab-link'));
+let bodyProductInfo = Array.from(document.querySelectorAll('.prod-info__text-body'));
+
+for (let item of tabsProductInfo) {
+    item.addEventListener('click', selectBodyInfo);
+}
+
+function selectBodyInfo(e) {
+    e.preventDefault();
+    tabsProductInfo.forEach(tab => {
+        tab.classList.remove("prod-info__tab-link--active");
+    });
+    bodyProductInfo.forEach(body => {
+        body.classList.remove("prod-info__text-body--active");
+    });
+    this.classList.add("prod-info__tab-link--active")
+    
+    let currentInfoBody = document.querySelector(this.getAttribute('href'));
+    currentInfoBody.classList.add("prod-info__text-body--active");
 }

@@ -63,6 +63,15 @@
         border: none;
         background: $green-gradient;
         margin-left: auto;
+        &:hover {
+            filter: brightness(97%);
+        }
+        &:active,
+        &:focus {
+            outline: none;
+            box-shadow: inset 2px 3px 7px 0 rgba(0,0,0,.3);
+            transition-duration: .23s;
+        }
     }
     &__pay {
         display: flex;

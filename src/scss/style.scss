@@ -19,6 +19,9 @@
 main {
     padding: 15px 0 30px;
 }
+button {
+    cursor: pointer;
+}
 
 @import "user-panel.scss";
 @import "info-panel.scss";
@@ -33,3 +36,4 @@ main {
 @import "product.scss";
 @import "prod-info.scss";
 @import "prod-reviews.scss";
+@import "prod-recommend.scss";
