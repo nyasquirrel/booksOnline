@@ -5,6 +5,9 @@
     &__slider {
         overflow: hidden;
         margin-right: 15px;
+        @media (max-width: 1300px) {
+            margin-right: 0;
+        }
         .owl-prev,
         .owl-next {
             position: absolute;
@@ -47,6 +50,9 @@
         min-width: 300px;
         align-items: center;
         box-shadow: inset 0 0 200px 10px rgba(0,0,0,1);
+        @media (max-width: 1300px) {
+            display: none;
+        }
         &-title {
             font-size: 24px;
             margin-bottom: 5px;

@@ -13,6 +13,7 @@ let tabs = document.querySelectorAll('.production__tabs-link');
 let productItems = document.querySelectorAll('.production__item');
 let productsBody = document.querySelector('.production__listing');
 let productItemsArray = Array.from(productItems);
+let pagination = document.querySelector('.production__pagination-list')
 
 tabs.forEach(tab => {
     tab.addEventListener('click', sortTabs);
@@ -20,25 +21,39 @@ tabs.forEach(tab => {
     
 function sortTabs(e) {
     e.preventDefault();
-    deleteActiveTab()
+    deleteActiveTab();
+    let counter = 0;
     this.classList.add('production__tabs-link--active');
     let sortName = this.getAttribute('href');
     switch (sortName) {
         case '#special':
             showSpecialProducts();
+            addPagination();
             break;
         case '#best':
             showAllProducts();
+            addPagination();
             break;
         case '#new':
             showNewProducts();
+            addPagination();
             break;
         case '#used':
             showUsedProducts();
+            addPagination();
             break;
         default:
             showAllProducts();
+            addPagination();
     }
+}
+
+
+
+function addPagination() {
+    if (counter >= 3) {
+        productsBody.append(pagination)
+    }  return;
 }
 
 function showSpecialProducts() {
@@ -48,6 +63,7 @@ function showSpecialProducts() {
     productsBody.innerHTML = '';
     for (let item of specialItems) {
         productsBody.append(item);
+        counter++;
     }
 }
 
@@ -55,6 +71,7 @@ function showAllProducts() {
     productsBody.innerHTML = '';
     for (product of productItemsArray) {
         productsBody.append(product);
+        counter++;
     }
 }
 
@@ -65,6 +82,7 @@ function showNewProducts() {
     productsBody.innerHTML = '';
     for (let item of newItems) {
         productsBody.append(item);
+        counter++;
     }
 }
 
@@ -75,6 +93,7 @@ function showUsedProducts() {
     productsBody.innerHTML = '';
     for (let item of usedItems) {
         productsBody.append(item);
+        counter++;
     }
 }
 

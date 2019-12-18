@@ -37,10 +37,13 @@
     &__category-link {
         display: block;
         padding: 8px 30px;
-        // border-bottom: 1px solid #d6d6d6;
+        font-size: 16px;
         text-decoration: none;
         color: #555454;
         position: relative;
+        @media (max-width: 1300px) {
+            font-size: 15px;
+        }
         &:hover {
             color: rgba(121, 178, 96, 0.8);
             transition-duration: 0.15s;

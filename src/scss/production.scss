@@ -1,6 +1,5 @@
 .production {
     display: flex;
-    align-items: flex-start;
     &__tabs {
         display: flex;
         list-style: none;
@@ -46,6 +45,7 @@
         flex: 1;
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-start;
         padding: 40px 35px 0;
     }
     &__item {
@@ -121,6 +121,8 @@
             width: 100%;
             display: flex;
             justify-content: flex-end;
+            align-items: flex-end;
+            align-self: flex-end;
             list-style: none;
             margin-top: 20px;
         }
@@ -140,10 +142,12 @@
             }
             &--active {
                 border: 1px solid #e0e0e0;
-                box-shadow: inset 0px -4px #81bd66; 
+                border-bottom: 1px solid #81bd66;
+                box-shadow: inset 0px -3px #81bd66; 
                 cursor: default;
                 &:hover {
-                    box-shadow: inset 0px -4px #81bd66; 
+                    border-bottom: 1px solid #81bd66;
+                    box-shadow: inset 0px -3px #81bd66; 
                     padding: 5px 10px;
                 } 
             }
