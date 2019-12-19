@@ -3,6 +3,11 @@
     &__tabs {
         display: flex;
         list-style: none;
+        &-item {
+        @media (max-width: 1020px) {
+            flex: 1 auto;
+        }  
+        }
         &-link {
             display: block;
             padding: 10px 20px;
@@ -55,12 +60,25 @@
         flex-direction: column;
         margin-bottom: 30px;
         position: relative;
-        &:nth-of-type(5n+1) {
-            margin-left: 0;
+        @media (max-width: 1020px) {
+            width: 20%;
+            &:nth-of-type(4n+1) {
+                margin-left: 0;
+            }
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            } 
         }
-        &:nth-of-type(5n) {
-            margin-right: 0;
+        @media (min-width: 1021px) {
+            &:nth-of-type(5n+1) {
+                margin-left: 0;
+            }
+            &:nth-of-type(5n) {
+                margin-right: 0;
+            }  
         }
+        
+
         img {
             margin-bottom: 15px;
             width: 100%;

@@ -31,4 +31,22 @@
             color: #fff;
         }
     }
+    &__burger {
+        display: inline-flex;
+        flex-direction: column;
+        margin: 10px;
+        height: 25px;
+        justify-content: space-around;
+        &--active {
+            
+            & :nth-child(2) {
+                display: none;
+            }
+        }
+        &-el {
+            width: 30px;
+            height: 4px;
+            background-color: #79b260;
+        }
+    }
 }

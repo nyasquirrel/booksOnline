@@ -18,7 +18,8 @@ let pagination = document.querySelector('.production__pagination-list')
 tabs.forEach(tab => {
     tab.addEventListener('click', sortTabs);
 })  
-    
+
+
 function sortTabs(e) {
     e.preventDefault();
     deleteActiveTab();
@@ -28,7 +29,7 @@ function sortTabs(e) {
     switch (sortName) {
         case '#special':
             showSpecialProducts();
-            addPagination();
+            addPagination()
             break;
         case '#best':
             showAllProducts();
@@ -51,7 +52,7 @@ function sortTabs(e) {
 
 
 function addPagination() {
-    if (counter >= 3) {
+    if (counter >= 3) { // добавление пагинации при более 3ех товаров, счетчик в цикле каждой функции
         productsBody.append(pagination)
     }  return;
 }
@@ -61,6 +62,7 @@ function showSpecialProducts() {
         el.dataset.item == 'special'
     )
     productsBody.innerHTML = '';
+    counter = 0;
     for (let item of specialItems) {
         productsBody.append(item);
         counter++;
@@ -69,6 +71,7 @@ function showSpecialProducts() {
 
 function showAllProducts() {
     productsBody.innerHTML = '';
+    counter = 0;
     for (product of productItemsArray) {
         productsBody.append(product);
         counter++;
@@ -80,6 +83,7 @@ function showNewProducts() {
         el.dataset.item == 'new'
     )
     productsBody.innerHTML = '';
+    counter = 0;
     for (let item of newItems) {
         productsBody.append(item);
         counter++;
@@ -91,6 +95,7 @@ function showUsedProducts() {
         el.dataset.item == 'used'
     )
     productsBody.innerHTML = '';
+    counter = 0;
     for (let item of usedItems) {
         productsBody.append(item);
         counter++;
