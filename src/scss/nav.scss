@@ -38,9 +38,22 @@
         height: 25px;
         justify-content: space-around;
         &--active {
-            
+            align-items: center;
+            transition-duration: .3s;
             & :nth-child(2) {
                 display: none;
+            }
+            & :nth-child(1) {
+                transform: rotate(45deg) translateY(9px);
+                position: relative;
+                left: 5px;
+                transition-duration: .35s;
+            }
+            & :nth-child(3) {
+                transform: rotate(-45deg) translateY(-9px);
+                position: relative;
+                left: 5px;
+                transition-duration: .35s;
             }
         }
         &-el {
