@@ -17,7 +17,7 @@ let pagination = document.querySelector('.production__pagination-list')
 
 tabs.forEach(tab => {
     tab.addEventListener('click', sortTabs);
-})  
+})
 
 
 function sortTabs(e) {
@@ -54,7 +54,7 @@ function sortTabs(e) {
 function addPagination() {
     if (counter >= 3) { // добавление пагинации при более 3ех товаров, счетчик в цикле каждой функции
         productsBody.append(pagination)
-    }  return;
+    } return;
 }
 
 function showSpecialProducts() {
@@ -125,7 +125,16 @@ function selectBodyInfo(e) {
         body.classList.remove("prod-info__text-body--active");
     });
     this.classList.add("prod-info__tab-link--active")
-    
+
     let currentInfoBody = document.querySelector(this.getAttribute('href'));
     currentInfoBody.classList.add("prod-info__text-body--active");
 }
+
+
+let navBurger = document.querySelector('.nav__burger');
+let navMenu = document.querySelector('.nav__menu');
+
+navBurger.addEventListener('click', () => {
+    navBurger.classList.toggle('nav__burger--active');
+    navMenu.classList.toggle('nav__menu--active');
+})
