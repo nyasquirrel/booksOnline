@@ -133,8 +133,10 @@ function selectBodyInfo(e) {
 
 let navBurger = document.querySelector('.nav__burger');
 let navMenu = document.querySelector('.nav__menu');
+let nav = document.querySelector('.nav');
 
 navBurger.addEventListener('click', () => {
     navBurger.classList.toggle('nav__burger--active');
     navMenu.classList.toggle('nav__menu--active');
+    nav.classList.toggle('nav--active');
 })
