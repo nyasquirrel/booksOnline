@@ -2,11 +2,22 @@
     border-top: 1px solid #dedede;
     border-bottom: 1px solid #dedede;
     position: relative;
-    z-index: 3;
-    transition: box-shadow .3s ease;
+    transition: .3s ease;
+    background-color: #fff;
     &--active {
         box-shadow: 0 4px 5px rgba(0,0,0,.18);
         transition: box-shadow .3s ease;
+    }
+    &--fixed {
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+        top: 35px;
+        transition: .5s ease;
+    }
+    &--to-top {
+        top: 0;
+        transition: .3s ease;
     }
     &__menu {
         list-style: none;
@@ -16,14 +27,14 @@
             position: absolute;
             left: 0;
             right: 0;
-            top: calc(100% + 10px);
+            top: 100%;
             z-index: 2;
             background-color: #fff;
             transform: scaleY(0);
             transform-origin: 0 0;
             flex-direction: column;
             transition-duration: .3s;
-            box-shadow: 0 15px 16px rgba(0,0,0,.35);
+            box-shadow: 0 15px 16px rgba(0,0,0,.35), inset 0 8px 15px -5px rgba(0,0,0,.3);
             &--active {
                 transform: scaleY(1);
                 transition-duration: .3s;

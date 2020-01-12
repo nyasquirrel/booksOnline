@@ -1,5 +1,18 @@
 .user-panel {
+    position: fixed;
+    width: 100%;
+    top: 0;
     background-color: #424242;
+    z-index: 10;
+    height: auto;
+    transition: .3s linear;
+    overflow: auto;
+    transform-origin: 0 0;
+    &--disappear {
+        transform: scaleY(0);
+        transition: .3s ease;
+        transform-origin: 0 0;
+    }
     &__list {
         margin: 0;
         padding: 0;

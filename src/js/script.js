@@ -130,7 +130,7 @@ function selectBodyInfo(e) {
     currentInfoBody.classList.add("prod-info__text-body--active");
 }
 
-
+// Nav Menu
 let navBurger = document.querySelector('.nav__burger');
 let navMenu = document.querySelector('.nav__menu');
 let nav = document.querySelector('.nav');
@@ -140,3 +140,27 @@ navBurger.addEventListener('click', () => {
     navMenu.classList.toggle('nav__menu--active');
     nav.classList.toggle('nav--active');
 })
+
+// fixed to top nav menu and hide user panel 
+
+let userPanel = document.querySelector('.user-panel');
+let infoPanel = document.querySelector('.info-panel');
+let production = document.querySelector('.production');
+
+window.addEventListener('scroll', () => {
+    if (pageYOffset > infoPanel.offsetHeight) {
+        nav.classList.add('nav--fixed');
+    }
+    else nav.classList.remove('nav--fixed');
+    if (document.documentElement.scrollTop > production.offsetTop) {
+        userPanel.classList.add('user-panel--disappear');
+        nav.classList.add('nav--to-top');
+    }
+    else {
+        userPanel.classList.remove('user-panel--disappear');
+        nav.classList.remove('nav--to-top');
+    }
+
+})
+
+
