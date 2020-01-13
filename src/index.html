@@ -17,7 +17,7 @@
             <div class="container">
                 <ul class="user-panel__list">
                     <li class="user-panel__el">
-                        <a href="#" class="user-panel__link">
+                        <a href="/sign-in" class="user-panel__link">
                             Sign in
                         </a>
                     </li>
@@ -451,10 +451,30 @@
                 </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="assets/owl.carousel.min.js"></script>
-        <script src="js/script.js"></script>
+
     </footer>
+    <div class="modal">
+        <div class="modal__sign-in">
+            <form action="get" action="#" class="modal__form">
+                <h2 class="modal__title">
+                    Sign in to booksOnline
+                </h2>
+                <label for="login-to-in">Username or email address</label>
+                <input type="text" id="login-to-in" class="modal__input-login-to-in">
+                <label for="pass-to-in">Password</label>
+                <input type="password" id="pass-to-in" class="modal__input-pass-to-in">
+                <a href="#" class="modal__forgot-pass">Forgot password?</a>
+                <button type="submit" class="modal__button">Sign in</button>
+                <div class="modal__close">
+                    <div class="modal__close-el"></div>
+                    <div class="modal__close-el"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/owl.carousel.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

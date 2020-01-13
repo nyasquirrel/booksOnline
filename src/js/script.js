@@ -164,3 +164,21 @@ window.addEventListener('scroll', () => {
 })
 
 
+// sign in link opening modal 
+
+let linkToSign = document.querySelector('a[href="/sign-in"]');
+let modal = document.querySelector('.modal');
+let modalSignIn = document.querySelector('.modal__sign-in')
+
+linkToSign.addEventListener('click', (event) => {
+    event.preventDefault();
+    modal.classList.add('modal--active');
+    setTimeout(() => modalSignIn.classList.add('modal__sign-in--active'), 10);  // НЕ РАБОТАЕТ, КОГДА КОД!!!
+})
+
+modal.addEventListener('click', () => {
+    modal.classList.remove('modal--active');
+    setTimeout(() => modalSignIn.classList.remove('modal__sign-in--active'), 10);  // НЕ РАБОТАЕТ, КОГДА КОД!!!
+})
+
+
