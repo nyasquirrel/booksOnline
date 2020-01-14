@@ -188,7 +188,9 @@ let modalSignUp = document.querySelector('.modal__sign-up');
 linkSignUp.addEventListener('click', (e) => {
     e.preventDefault();
     modalSignUp.classList.add('modal__sign-up--active');
-
+    modalSignUp.classList.remove('modal__sign-up--disappear');
+    modalSignIn.classList.remove('modal__sign-in--active');
+    modalSignIn.classList.add('modal__sign-in--disappear');
 })
 
 // opening forgot pass modal 
@@ -200,6 +202,7 @@ let modalForgPass = document.querySelector('.modal__forgot-pass');
 linkForgPass.addEventListener('click', (e) => {
     e.preventDefault();
     modalForgPass.classList.add('modal__forgot-pass--active');
+    modalForgPass.classList.remove('modal__forgot-pass--disappear');
     modalSignIn.classList.remove('modal__sign-in--active');
     modalSignIn.classList.add('modal__sign-in--disappear');
 })
@@ -211,8 +214,9 @@ let modalClose = document.querySelectorAll('.modal__close');
 
 function closeModal() {
     modal.classList.remove('modal--active');
-    modalSignIn.classList.remove('modal__sign-in--active');
-    modalSignUp.classList.remove('modal__sign-up--active');
+    modalSignIn.className = 'modal__sign-in';
+    modalSignUp.className = 'modal__sign-up';
+    modalForgPass.className = 'modal__forgot-pass';
     document.body.style.overflow = "";
 }
 
@@ -230,10 +234,17 @@ modalClose.forEach(item => {
     item.addEventListener('click', () => {
         if (item.closest('.modal__forgot-pass')) {
             modalForgPass.classList.remove('modal__forgot-pass--active');
-            modalForgPass.classList.remove('modal__forgot-pass--disappear');
+            modalForgPass.classList.add('modal__forgot-pass--disappear');
             modalSignIn.classList.remove('modal__sign-in--disappear');
             modalSignIn.classList.add('modal__sign-in--active');
         }
+        else if (item.closest('.modal__sign-up')) {
+            modalSignUp.classList.remove('modal__sign-up--active');
+            modalSignUp.classList.add('modal__sign-up--disappear');
+            modalSignIn.classList.remove('modal__sign-in--disappear');
+            modalSignIn.classList.add('modal__sign-in--active');
+        }
+        else closeModal();
     });
 });
 

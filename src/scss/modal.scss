@@ -5,40 +5,40 @@
   z-index: 10;
   transform: scale(0);
   transform-origin: 0 0;
-  transition: 0.14s;
   &--active {
     transform: scale(1);
     position: fixed;
     top: 0;
     left: 0;
-    transition: transform 0.2s;
+    transition: transform 0.15s;
   }
   &__sign-in,
   &__sign-up,
   &__forgot-pass {
     display: none;
     position: fixed;
-    top: 50%;
+    top: -50%;
     left: 50%;
     background-color: #fff;
     width: 350px;
     border: 2px solid #d5d2d2;
     border-radius: 7px;
     transform: translate(-50%, -300%);
-    transition-duration: 0.4s;
+    transition-duration: .35s;
     &--active {
       display: block;
       transform: translate(-50%, -50%);
-      animation: modalFall .65s ease-in-out;
+      animation: modalFall .78s ease-in-out;
+      top: 50%;
     }
     &--disappear {
       display: block;
       transform: scale(0);
       transform-origin: 100% 0;
       position: fixed;
-      top: 50%;
-      left: 200%;
-      animation: modalDis .2s ease;
+      top: -50%;
+      left: 50%;
+      animation: modalDis .3s ease;
     }
   }
   &__form {
@@ -49,12 +49,6 @@
   &__title {
     align-self: center;
     margin-bottom: 20px;
-  }
-  &__input-login-to-in {
-    margin-bottom: 20px;
-  }
-  &__input-pass-to-in {
-    margin-bottom: 5px;
   }
   &__sign-in-links {
     display: flex;
@@ -69,24 +63,29 @@
     margin-bottom: 20px;
     align-self: flex-start;
   }
-  label {
-    font-size: 14px;
-    font-weight: bold;
-    font-style: italic;
-    margin-bottom: 3px;
-    align-self: flex-start;
-  }
-  input {
+
+  &__input {
     padding: 7px 10px;
     border-radius: 4px;
     border: 1px solid #d5d2d2;
     box-shadow: inset 0 0 2px rgba(0,0,0,.2);
     width: 100%;
+    margin-bottom: 20px;
     &:focus {
       outline: none;
       border: 1px solid #79b360;
       filter: drop-shadow(0px 0px 1px #79b360);
     }
+    &-pass {
+      margin-bottom: 7px;
+    }
+  }
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 5px;
+    align-self: flex-start;
   }
   button {
     background: $green-gradient;
@@ -96,6 +95,7 @@
     text-align: center;
     color: #fff;
     font-size: 16px;
+    margin-top: 10px;
     &:hover {
       filter: drop-shadow(0px 0px 2px #79b360);
     }
@@ -144,28 +144,25 @@
 
 @keyframes modalFall {
   0% {
-    transform: translate(-50%, -300%);
-  }
-  35% {
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -400%);
   }
   45% {
-    transform: translate(-50%, -55%);
-  }
-  55% {
     transform: translate(-50%, -45%);
   }
-  65% {
-    transform: translate(-50%, -53%);
+  50% {
+    transform: translate(-50%, -54%);
   }
-  75% {
-    transform: translate(-50%, -47%);
+  60% {
+    transform: translate(-50%, -46%);
   }
-  85% {
+  70% {
     transform: translate(-50%, -52%);
   }
-  95% {
+  80% {
     transform: translate(-50%, -48%);
+  }
+  90% {
+    transform: translate(-50%, -50%);
   }
   100% {
     transform: translate(-50%, -50%);
@@ -177,31 +174,22 @@
     transform: scale(1) translate(-50%, -50%);
   }
   10% {
-    transform: scale(.9) translate(-50%, -50%);
-  }
-  20% {
     transform: scale(.8) translate(-50%, -50%);
   }
-  30% {
-    transform: scale(.7) translate(-50%, -50%);
-  }
-  40% {
+  20% {
     transform: scale(.6) translate(-50%, -50%);
   }
-  50% {
-    transform: scale(.5) translate(-50%, -50%);
-  }
-  60% {
+  30% {
     transform: scale(.4) translate(-50%, -50%);
   }
-  70% {
-    transform: scale(.3) translate(-50%, -50%);
-  }
-  80% {
+  40% {
     transform: scale(.2) translate(-50%, -50%);
   }
-  90% {
-    transform: scale(0.1) translate(-50%, -50%);
+  50% {
+    transform: scale(.1) translate(-50%, -50%);
+  }
+  60% {
+    transform: scale(0) translate(-50%, -50%);
   }
   100% {
     transform: scale(0) translate(-50%, -50%);
