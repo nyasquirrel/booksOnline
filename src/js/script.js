@@ -175,7 +175,7 @@ let modalSignIn = document.querySelector('.modal__sign-in');
 linkToSign.addEventListener('click', (event) => {
     event.preventDefault();
     modal.classList.add('modal--active');
-    setTimeout(() => modalSignIn.classList.add('modal__sign-in--active'), 10);
+    modalSignIn.classList.add('modal__sign-in--active');
     document.body.style.overflow = "hidden";
 })
 
@@ -249,7 +249,3 @@ modalClose.forEach(item => {
 });
 
 modal.addEventListener('click', closeModal);
-
-// function parentModalClose(el) {
-//     alert(el.closest('.modal__forgot-pass'));
-// }
