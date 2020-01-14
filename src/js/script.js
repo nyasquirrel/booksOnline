@@ -168,17 +168,77 @@ window.addEventListener('scroll', () => {
 
 let linkToSign = document.querySelector('a[href="/sign-in"]');
 let modal = document.querySelector('.modal');
-let modalSignIn = document.querySelector('.modal__sign-in')
+let modalSignIn = document.querySelector('.modal__sign-in');
+
+
 
 linkToSign.addEventListener('click', (event) => {
     event.preventDefault();
     modal.classList.add('modal--active');
-    setTimeout(() => modalSignIn.classList.add('modal__sign-in--active'), 10);  // НЕ РАБОТАЕТ, КОГДА КОД!!!
+    setTimeout(() => modalSignIn.classList.add('modal__sign-in--active'), 10);
+    document.body.style.overflow = "hidden";
 })
 
-modal.addEventListener('click', () => {
+
+// opening reg modal 
+
+let linkSignUp = document.querySelector('#sign-up');
+let modalSignUp = document.querySelector('.modal__sign-up');
+
+linkSignUp.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalSignUp.classList.add('modal__sign-up--active');
+
+})
+
+// opening forgot pass modal 
+
+let linkForgPass = document.querySelector('#forgot-pass');
+let modalForgPass = document.querySelector('.modal__forgot-pass');
+
+
+linkForgPass.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalForgPass.classList.add('modal__forgot-pass--active');
+    modalSignIn.classList.remove('modal__sign-in--active');
+    modalSignIn.classList.add('modal__sign-in--disappear');
+})
+
+
+// close modals
+let modalClose = document.querySelectorAll('.modal__close');
+
+
+function closeModal() {
     modal.classList.remove('modal--active');
-    setTimeout(() => modalSignIn.classList.remove('modal__sign-in--active'), 10);  // НЕ РАБОТАЕТ, КОГДА КОД!!!
+    modalSignIn.classList.remove('modal__sign-in--active');
+    modalSignUp.classList.remove('modal__sign-up--active');
+    document.body.style.overflow = "";
+}
+
+modalSignIn.addEventListener('click', (e) => {
+    e.stopPropagation();
+})
+modalSignUp.addEventListener('click', (e) => {
+    e.stopPropagation();
+})
+modalForgPass.addEventListener('click', (e) => {
+    e.stopPropagation();
 })
 
+modalClose.forEach(item => {
+    item.addEventListener('click', () => {
+        if (item.closest('.modal__forgot-pass')) {
+            modalForgPass.classList.remove('modal__forgot-pass--active');
+            modalForgPass.classList.remove('modal__forgot-pass--disappear');
+            modalSignIn.classList.remove('modal__sign-in--disappear');
+            modalSignIn.classList.add('modal__sign-in--active');
+        }
+    });
+});
 
+modal.addEventListener('click', closeModal);
+
+// function parentModalClose(el) {
+//     alert(el.closest('.modal__forgot-pass'));
+// }

@@ -5,7 +5,7 @@
   z-index: 10;
   transform: scale(0);
   transform-origin: 0 0;
-  transition: 0.2s;
+  transition: 0.14s;
   &--active {
     transform: scale(1);
     position: fixed;
@@ -13,7 +13,10 @@
     left: 0;
     transition: transform 0.2s;
   }
-  &__sign-in {
+  &__sign-in,
+  &__sign-up,
+  &__forgot-pass {
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -22,10 +25,20 @@
     border: 2px solid #d5d2d2;
     border-radius: 7px;
     transform: translate(-50%, -300%);
-    transition-duration: 1s;
+    transition-duration: 0.4s;
     &--active {
+      display: block;
       transform: translate(-50%, -50%);
-      animation: modalFall .75s ease-in-out;
+      animation: modalFall .65s ease-in-out;
+    }
+    &--disappear {
+      display: block;
+      transform: scale(0);
+      transform-origin: 100% 0;
+      position: fixed;
+      top: 50%;
+      left: 200%;
+      animation: modalDis .2s ease;
     }
   }
   &__form {
@@ -43,7 +56,11 @@
   &__input-pass-to-in {
     margin-bottom: 5px;
   }
-  &__forgot-pass {
+  &__sign-in-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
@@ -86,7 +103,7 @@
       outline: none;
     }
     &:active {
-      box-shadow: inset 0 0 10px 4px #79b360;
+      box-shadow: inset 0 0 7px 6px #79b360;
       filter: drop-shadow(0 0 0);
     }
   }
@@ -98,6 +115,18 @@
     height: 22px;
     background: $green-gradient;
     border-radius: 100%;
+    opacity: .7;
+    &:hover {
+      opacity: 1;
+    }
+    &:focus {
+      outline: none;
+      opacity: 1;
+    }
+    &:active {
+      box-shadow: inset 0 0 1px 4px #79b360;
+      opacity: 1;
+    }
     &-el {
       position: absolute;
       top: 50%;
@@ -140,5 +169,41 @@
   }
   100% {
     transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes modalDis {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+  10% {
+    transform: scale(.9) translate(-50%, -50%);
+  }
+  20% {
+    transform: scale(.8) translate(-50%, -50%);
+  }
+  30% {
+    transform: scale(.7) translate(-50%, -50%);
+  }
+  40% {
+    transform: scale(.6) translate(-50%, -50%);
+  }
+  50% {
+    transform: scale(.5) translate(-50%, -50%);
+  }
+  60% {
+    transform: scale(.4) translate(-50%, -50%);
+  }
+  70% {
+    transform: scale(.3) translate(-50%, -50%);
+  }
+  80% {
+    transform: scale(.2) translate(-50%, -50%);
+  }
+  90% {
+    transform: scale(0.1) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(0) translate(-50%, -50%);
   }
 }
