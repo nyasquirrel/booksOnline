@@ -265,22 +265,25 @@ let user = {};
 function addNewUser(event) {
     event.preventDefault();
     if (!(inputLoginUp.value.trim() == '')) {
-        for (let item of userList) {
-            if (!(inputLoginUp.value == item.login)) {
-                user = new UserObj(inputLoginUp.value);
-                userList.push(user);
-                console.log(userList);
-                inputLoginUp.parentNode.className = 'label__status--accept';
-                inputLoginUp.style = '';
-
-            }
-        }
-    }
-     else {
-        inputLoginUp.parentNode.className = 'label__status--retry';
-        inputLoginUp.style.border = '1px solid red';
-    }
+        if (userList.length > 0) {
+            if (!(userList.find(item => inputLoginUp.value == item.login))) {
+                UserToArrayAccepted();
+            } else UserToArrayRetry();
+        } else UserToArrayAccepted();
+    } else UserToArrayRetry();
     console.log(userList);
+}
+
+function UserToArrayAccepted() {
+    user = new UserObj(inputLoginUp.value);
+    userList.push(user);
+    inputLoginUp.parentNode.className = 'label__status--accept';
+    inputLoginUp.style = '';
+}
+
+function UserToArrayRetry() {
+    inputLoginUp.parentNode.className = 'label__status--retry';
+    inputLoginUp.style.border = '1px solid red';
 }
 
 function UserObj(login) {
@@ -289,17 +292,13 @@ function UserObj(login) {
     this.email = inputEmailUp.value;
     this.pass = inputPassUp.value;
 }
+
 signUpBtn.addEventListener('click', addNewUser);
+
+
 
 // inputLoginUp.addEventListener('change', () => {
 //     if (!(userList.find(item => item == inputLoginUp.value))) {
-        
+
 //     }
 // })
-
-
-for (let item of userList) {
-    inputLoginUp.value == UserObj.login;
-}
-
-
