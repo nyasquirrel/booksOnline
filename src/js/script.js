@@ -249,3 +249,57 @@ modalClose.forEach(item => {
 });
 
 modal.addEventListener('click', closeModal);
+
+
+// storage input's data from reg form
+
+let userList = [];
+let inputLoginUp = document.querySelector('#login-to-up');
+let inputNameUp = document.querySelector('#name-to-up');
+let inputEmailUp = document.querySelector('#email-to-up');
+let inputPassUp = document.querySelector('#pass-to-up');
+let inputPassUpAgain = document.querySelector('#pass-to-up-again');
+let signUpBtn = document.querySelector('.modal__sign-up button');
+let user = {};
+
+function addNewUser(event) {
+    event.preventDefault();
+    if (!(inputLoginUp.value.trim() == '')) {
+        for (let item of userList) {
+            if (!(inputLoginUp.value == item.login)) {
+                user = new UserObj(inputLoginUp.value);
+                userList.push(user);
+                console.log(userList);
+                inputLoginUp.parentNode.className = 'label__status--accept';
+                inputLoginUp.style = '';
+
+            }
+        }
+    }
+     else {
+        inputLoginUp.parentNode.className = 'label__status--retry';
+        inputLoginUp.style.border = '1px solid red';
+    }
+    console.log(userList);
+}
+
+function UserObj(login) {
+    this.login = login;
+    this.name = inputNameUp.value;
+    this.email = inputEmailUp.value;
+    this.pass = inputPassUp.value;
+}
+signUpBtn.addEventListener('click', addNewUser);
+
+// inputLoginUp.addEventListener('change', () => {
+//     if (!(userList.find(item => item == inputLoginUp.value))) {
+        
+//     }
+// })
+
+
+for (let item of userList) {
+    inputLoginUp.value == UserObj.login;
+}
+
+
