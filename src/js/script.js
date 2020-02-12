@@ -264,7 +264,7 @@ let user = {};
 
 function addNewUser(event) {
     event.preventDefault();
-    if (!(inputLoginUp.value.trim() == '')) {
+    if ((inputLoginUp.value.trim() != '') && (inputLoginUp.value.trim().length > 3)) {
         if (userList.length > 0) {
             if (!(userList.find(item => inputLoginUp.value == item.login))) {
                 UserToArrayAccepted();
@@ -296,9 +296,16 @@ function UserObj(login) {
 signUpBtn.addEventListener('click', addNewUser);
 
 
-
-// inputLoginUp.addEventListener('change', () => {
-//     if (!(userList.find(item => item == inputLoginUp.value))) {
-
-//     }
-// })
+// checking login when input
+inputLoginUp.addEventListener('input', () => {
+    if (inputLoginUp.value.trim().length > 3) {
+        if (!(userList.find(item => item.login == inputLoginUp.value))) {
+            inputLoginUp.parentNode.className = 'label__status--accept';
+            inputLoginUp.style = '';
+        } 
+        else {
+            inputLoginUp.parentNode.className = 'label__status--retry';
+            inputLoginUp.style.border = '1px solid red';
+        }
+    } 
+})
