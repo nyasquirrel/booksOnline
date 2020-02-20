@@ -19,7 +19,6 @@ tabs.forEach(tab => {
     tab.addEventListener('click', sortTabs);
 })
 
-
 function sortTabs(e) {
     e.preventDefault();
     deleteActiveTab();
@@ -48,8 +47,6 @@ function sortTabs(e) {
             addPagination();
     }
 }
-
-
 
 function addPagination() {
     if (counter >= 3) { // добавление пагинации при более 3ех товаров, счетчик в цикле каждой функции
@@ -107,7 +104,6 @@ function deleteActiveTab() {
         tab.classList.remove('production__tabs-link--active');
     });
 }
-
 
 let tabsProductInfo = Array.from(document.querySelectorAll('.prod-info__tab-link'));
 let bodyProductInfo = Array.from(document.querySelectorAll('.prod-info__text-body'));
@@ -170,8 +166,6 @@ let linkToSign = document.querySelector('a[href="/sign-in"]');
 let modal = document.querySelector('.modal');
 let modalSignIn = document.querySelector('.modal__sign-in');
 
-
-
 linkToSign.addEventListener('click', (event) => {
     event.preventDefault();
     modal.classList.add('modal--active');
@@ -193,11 +187,11 @@ linkSignUp.addEventListener('click', (e) => {
     modalSignIn.classList.add('modal__sign-in--disappear');
 })
 
+
 // opening forgot pass modal 
 
 let linkForgPass = document.querySelector('#forgot-pass');
 let modalForgPass = document.querySelector('.modal__forgot-pass');
-
 
 linkForgPass.addEventListener('click', (e) => {
     e.preventDefault();
@@ -210,7 +204,6 @@ linkForgPass.addEventListener('click', (e) => {
 
 // close modals
 let modalClose = document.querySelectorAll('.modal__close');
-
 
 function closeModal() {
     modal.classList.remove('modal--active');
@@ -262,9 +255,8 @@ let inputPassUpAgain = document.querySelector('#pass-to-up-again');
 let signUpBtn = document.querySelector('.modal__sign-up button');
 let user = {};
 
-function addNewUser(event) {
-    event.preventDefault();
-    if (!(inputLoginUp.value.trim() == '')) {
+function addNewUser() {
+    if (!(inputLoginUp.value.trim() == '') && inputLoginUp.value.trim().length > 3) {
         if (userList.length > 0) {
             if (!(userList.find(item => inputLoginUp.value == item.login))) {
                 UserToArrayAccepted();
@@ -277,8 +269,6 @@ function addNewUser(event) {
 function UserToArrayAccepted() {
     user = new UserObj(inputLoginUp.value);
     userList.push(user);
-    inputLoginUp.parentNode.className = 'label__status--accept';
-    inputLoginUp.style = '';
 }
 
 function UserToArrayRetry() {
@@ -293,12 +283,19 @@ function UserObj(login) {
     this.pass = inputPassUp.value;
 }
 
-signUpBtn.addEventListener('click', addNewUser);
+signUpBtn.addEventListener('click', (e) => {
+    event.preventDefault();
+    addNewUser();
+});
 
 
+inputLoginUp.addEventListener('blur', signOnInput);
 
-// inputLoginUp.addEventListener('change', () => {
-//     if (!(userList.find(item => item == inputLoginUp.value))) {
-
-//     }
-// })
+function signOnInput() {
+    if (userList.find(item => item.login == this.value) || inputLoginUp.value.length < 4) {
+        UserToArrayRetry();
+    } else {
+        this.parentNode.className = 'label__status--accept';
+        this.style = '';
+    }
+}

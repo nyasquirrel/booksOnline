@@ -26,8 +26,8 @@ gulp.task("copy", function () {
 		"src/js/*",
 		"src/img/*"
 	], {
-			base: "src"
-		})
+		base: "src"
+	})
 		.pipe(gulp.dest("build/"));
 });
 
@@ -79,7 +79,6 @@ gulp.task("html:copy", function () {
 });
 
 gulp.task("html:update", gulp.series("html:copy"), function (done) {
-	browserSync.reload();
 	done();
 });
 
@@ -92,7 +91,6 @@ gulp.task("js", function () {
 });
 
 gulp.task("js:update", gulp.series("js"), function (done) {
-	browserSync.reload();
 	done();
 });
 
@@ -100,14 +98,11 @@ gulp.task("serve", function () {
 	browserSync.init({
 		server: './build',
 		notify: false,
-		// open: true,
-		// cors: true,
-		// ui: false
 	});
 
 	gulp.watch("src/scss/**/*.{scss,sass}", gulp.series("style"));
 	gulp.watch("src/*.html", gulp.series("html:update")).on('change', browserSync.reload);
-	gulp.watch("src/js/script.js", gulp.series("js:update"));
+	gulp.watch("src/js/*.js", gulp.series("js:update")).on('change', browserSync.reload);;
 });
 
 gulp.task("build", gulp.series(
