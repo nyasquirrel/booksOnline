@@ -166,8 +166,8 @@ let linkToSign = document.querySelector('a[href="/sign-in"]');
 let modal = document.querySelector('.modal');
 let modalSignIn = document.querySelector('.modal__sign-in');
 
-linkToSign.addEventListener('click', (event) => {
-    event.preventDefault();
+linkToSign.addEventListener('click', (e) => {
+    e.preventDefault();
     modal.classList.add('modal--active');
     modalSignIn.classList.add('modal__sign-in--active');
     document.body.style.overflow = "hidden";
@@ -284,7 +284,7 @@ function UserObj(login) {
 }
 
 signUpBtn.addEventListener('click', (e) => {
-    event.preventDefault();
+    e.preventDefault();
     addNewUser();
 });
 
