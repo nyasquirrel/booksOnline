@@ -1,5 +1,5 @@
 *.[oa]
 *~
 node_modules/
-src/
-psd/
+src
+psd
