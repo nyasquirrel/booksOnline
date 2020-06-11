@@ -7,6 +7,9 @@
     @media (max-width: 768px) {
         flex-grow: 0;
         margin-left: auto;
+        order: 3;
+        font-size: 0;
+        background-color: #fafafa;
     }
     &__filed {
         flex: 1 auto;
@@ -46,6 +49,14 @@
         background-color: $green;
         border: 4px solid $green;
         padding: 5px 10px;
+        @media (max-width: 768px) {
+            font-size: 0;
+            min-width: auto;
+            border: none;
+            background-color: #fafafa;
+            padding: 1px;
+            margin-left: 20px;
+        }
         &:focus {
             outline: none;
         }
@@ -54,6 +65,18 @@
         }
         svg {
             margin-right: 5px;
+            @media (max-width: 768px) {
+                margin-right: 0;
+                &:hover {
+                    filter: brightness(0.8);
+                }
+            }
+            path {
+                @media (max-width: 768px) {
+                    fill: $green;
+                }
+            }
+
         }
     }
 }

@@ -1,4 +1,4 @@
 *.[oa]
 *~
 node_modules/
-build/
+src/
